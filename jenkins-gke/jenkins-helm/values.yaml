@@ -75,7 +75,7 @@ master:
                               label: "jnlp-exec"
                               containers:
                                 - name: "jnlp"
-                                  image: "jenkinsci/jnlp-slave"
+                                  image: "jenkins/jnlp-slave"
                                   alwaysPullImage: false
                                   workingDir: "/home/jenkins/agent"
                                   ttyEnabled: true
@@ -141,8 +141,7 @@ master:
                             id('12312313')
                             scanCredentialsId('github-token')
                             repoOwner("${GITHUB_USERNAME}")
-                            repository("${GITHUB_REPO}")
-                            buildOriginBranchWithPR(false)
+                            repository("${GITHUB_REPO}")                            
                             buildOriginBranch(true)
                             buildOriginPRMerge(true)
                             includes("dev prod PR*")
